@@ -18,6 +18,6 @@ Route::get('/',[HomepageController::class, 'index'])->name('homepage.index');
 Route::get('/about-us',[HomepageController::class, 'aboutus'])->name('homepage.aboutus');
 Route::get('/contact-us',[HomepageController::class, 'contactus'])->name('homepage.contactus');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::get('/app/admin', [AdminDashboard::class, 'index'])->name('app.admin.index');
