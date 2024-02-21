@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+
+Route::get('/',[HomepageController::class, 'index'])->name('homepage.index');
+Route::get('/about-us',[HomepageController::class, 'aboutus'])->name('homepage.aboutus');
+Route::get('/contact-us',[HomepageController::class, 'contactus'])->name('homepage.contactus');
+
 });
 
 Auth::routes();
