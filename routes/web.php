@@ -14,6 +14,7 @@ use App\Http\Controllers\HomepageController;
 |
 */
 
+<<<<<<< Updated upstream
 Route::get('/', function () {
     return view('welcome');
 
@@ -22,7 +23,7 @@ Route::get('/about-us',[HomepageController::class, 'aboutus'])->name('homepage.a
 Route::get('/contact-us',[HomepageController::class, 'contactus'])->name('homepage.contactus');
 
 });
+=======
+>>>>>>> Stashed changes
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomepageController::class, 'index'])->name('homepage.index');

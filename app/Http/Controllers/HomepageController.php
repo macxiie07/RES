@@ -15,7 +15,16 @@ class HomepageController extends Controller
     {
         return view('homepage.aboutus');
     }
+<<<<<<< Updated upstream
     
+=======
+
+    public function products()
+    {
+        return view('homepage.products');
+    }
+
+>>>>>>> Stashed changes
     public function contactus()
     {
         return view('homepage.contactus');
