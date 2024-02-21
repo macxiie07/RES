@@ -206,7 +206,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ route('homepage.index')}}">Home</a></li>
         <li><a href="{{ route('homepage.aboutus')}}">About</a></li>
-        <li><a href="{{ route('homepage.products')}}">Products</a></li>
         <li><a href="{{ route('homepage.contactus')}}">Contact Us</a></li>
       </ul>
     </div>
@@ -223,6 +222,18 @@
     </div>
   </div>
 </div>
+
+<div>
+@yield('pageBody')
+</div>
+
+
+
+
+
+
+
+
 
 <footer class="container text-center">
   <a href="#myPage" title="To Top">

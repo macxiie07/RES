@@ -1,16 +1,3 @@
-@extends('homepage.template');
-
-@section('pageTitle')
-    Home
-@endsection
-
-
-@section('pageContent')
-    This is the content
-@endsection
-
-
-@section('pageBody')
 <div class="container-fluid bg-1 text-center">
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
@@ -49,5 +36,3 @@
         </div>
     </div>
 </div>
-
-@endsection
