@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\App\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminBookController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +44,10 @@ Route::middleware(['admin'])->group(function () {
 Route::get('/admin/auth', [AdminAuthController::class, 'index'])->name('admin.auth.index');
 Route::put('/admin/auth', [AdminAuthController::class, 'changePassword'])->name('admin.auth.changePassword');
 
+Route::get('/app/admin/books', [BookController::class, 'index'])->name('admin.books.index');
+Route::get('/app/admin/books/create', [AdminBookController::class, 'create'])->name('admin.books.create');
+Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
+
+Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
+Route::get('/app/admin/category/create', [AdminCategoryController::class, 'create'])->name('admin.category.create');
+Route::post('app/admin/category', [AdminCategoryController::class, 'store'])->name('admin.category.store');

@@ -306,13 +306,13 @@ return [
         ],
         [
             'text'        => 'Category',
-            'url'         => 'app/admin/departments',
+            'url'         => 'app/admin/category',
             'icon'        => 'nav-icon fas fa-list',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Books',
-            'url'         => 'app/admin/positions',
+            'url'         => 'app/admin/books',
             'icon'        => 'nav-icon fas fa-book',
             'label_color' => 'success',
         ],
