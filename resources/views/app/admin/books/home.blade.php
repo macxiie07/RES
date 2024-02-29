@@ -1,17 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'Users')
+@section('title', 'Archives')
 
 @section('content_header')
-    <h1>Users</h1>
+    <h1>Archives</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">User list</h3>
+            <h3 class="card-title">Archived list</h3>
             <div class="card-tools">
-                <a href="{{route('admin.books.create')}}" class="btn btn-primary form-control float-right">Add new user</a>
+                <a href="{{route('admin.books.create')}}" class="btn btn-primary form-control float-right">Add new</a>
             </div>
         </div>
         <div class="card-body">

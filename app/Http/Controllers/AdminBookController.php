@@ -33,9 +33,9 @@ class AdminBookController extends Controller
             'category_id' => 'required',
         ]);
 
-        Book::create($data);
+      Book::create($data);
 
-        return redirect(route('admin.books.index'))->with('status', 'Category has been successfully saved.');
+        return redirect(route('app.admin.books.index'))->with('status', 'Category has been successfully saved.');
     }
 
     public function modify(Book $book)

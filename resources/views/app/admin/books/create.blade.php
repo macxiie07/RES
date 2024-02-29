@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="card">
-        <form method="post" action="">
+        <form method="post" action="{{route('admin.books.store')}}">
             @csrf 
             @method('post')
             <div class="card-body">
