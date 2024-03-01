@@ -30,24 +30,24 @@
                         <th>Abstract</th>
                         <th>File-URL</th>
                         <th>Category ID</th>
-                        <th  style="width: 170px">Action</th>
+                        <th style="with: 250px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach($book as $book)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$book->id}}</td>
+                            <td>{{$book->keywords}}</td>
+                            <td>{{$book->title}}</td>
+                            <td>{{$book->abstract}}</td>
+                            <td>{{$book->file_url}}</td>
+                            <td>{{$book->category_id}}</td>
                             <td>    
-                                <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>&nbsp;
+                                <a href="{{ route('admin.books.show', ['book' =>$book->id])}}" class="btn btn-warning"><i class="fas fa-eye"></i></a>&nbsp;
                                 <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
-                    
+                    @endforeach
                 </tbody>
             </table>
         </div>

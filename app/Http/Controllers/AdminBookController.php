@@ -15,9 +15,13 @@ class AdminBookController extends Controller
     {
         $book = Category::orderBy('created_at', 'DESC')->get();
        
-        return view('admin.books.home', ['book' => $book]);
+        return view('admin.books.home', ['books' => $book]);
     }
+     
+    public function show(Book $book){
 
+        return view('app.admin.books.show', compact('book'));
+      }
     public function create()
     {
         return view('app.admin.books.create');
@@ -40,7 +44,7 @@ class AdminBookController extends Controller
 
     public function modify(Book $book)
     {
-        return view('admin.books.modify', ['book' => $book]);
+        return view('admin.books.modify', ['books' => $book]);
     }
 
     public function update(Request $request, Book $book)
@@ -55,12 +59,12 @@ class AdminBookController extends Controller
 
         $book->update($data);
 
-        return redirect(route('admin.books.modify', ['book' => $book]))->with('status', 'Blog has been successfully updated.');
+        return redirect(route('admin.books.modify', ['books' => $book]))->with('status', 'Blog has been successfully updated.');
     }
 
     public function delete( Book $book)
     {
-        return view('admin.books.delete', ['book' => $book]);
+        return view('admin.books.delete', ['books' => $book]);
     }
 
     public function destroy( Book $book)

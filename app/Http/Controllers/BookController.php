@@ -4,7 +4,7 @@ namespace App\http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Book;
 class BookController extends Controller
 {
     /**
@@ -24,6 +24,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('app.admin.books.home');
+        $book = Book::orderBy('created_at', 'DESC')->get();
+
+        return view('app.admin.books.home', ['book' => $book]);
     }
 }

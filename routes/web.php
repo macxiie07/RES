@@ -47,6 +47,7 @@ Route::put('/admin/auth', [AdminAuthController::class, 'changePassword'])->name(
 Route::get('/app/admin/books', [BookController::class, 'index'])->name('admin.books.index');
 Route::get('/app/admin/books/create', [AdminBookController::class, 'create'])->name('admin.books.create');
 Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
+Route::get('/books/{book}', [AdminBookController::class, 'show'])->name('admin.books.show');
 
 Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
 Route::get('/app/admin/category/create', [AdminCategoryController::class, 'create'])->name('admin.category.create');
