@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="card">
-        <form method="post" action="{{route('admin.blogs.update', $blog)}}">
+        <form method="post" action="{{route('admin.category.update', $category)}}">
             @csrf 
             @method('put')
             <div class="card-body">
@@ -19,27 +19,27 @@
                     </div>            
                 @endif
                 <div class="form-group">
-                    <label for="title">Strand</label>
-                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{$blog->title}}" placeholder="Enter blog title">
-                    @error('title')
+                    <label for="strand">Strand</label>
+                    <input type="text" name="strand" class="form-control @error('strand') is-invalid @enderror" id="strand" value="{{$category->strand}}" placeholder="Enter strand">
+                    @error('strand')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="content">Level</label>
-                    <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content" rows="10" placeholder="Enter blog content">{{$blog->content}}</textarea>
-                    @error('content')
+                    <label for="level">Level</label>
+                    <textarea name="level" class="form-control @error('level') is-invalid @enderror" id="level" rows="10" placeholder="Enter level">{{$category->level}}</textarea>
+                    @error('level')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="content">Research_type</label>
-                    <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content" rows="10" placeholder="Enter blog content">{{$blog->content}}</textarea>
-                    @error('content')
+                    <label for="research_type">Research_type</label>
+                    <textarea name="research_type" class="form-control @error('research_type') is-invalid @enderror" id="research_type" rows="10" placeholder="Enter research_type">{{$category->research_type}}</textarea>
+                    @error('research_type')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -48,7 +48,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
-                <a href="{{route('admin.blogs.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
+                <a href="{{route('admin.category.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
             </div>
         </form>
     </div>

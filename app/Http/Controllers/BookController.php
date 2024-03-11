@@ -24,7 +24,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $book = Book::orderBy('created_at', 'DESC')->get();
+        $book = Book::orderBy('created_at', 'ASC')->get();
 
         return view('app.admin.books.home', ['book' => $book]);
     }

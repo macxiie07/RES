@@ -13,8 +13,17 @@
             @method('post')
             <div class="card-body">
                 <div class="form-group">
-                    <label for="strand">Keywords</label>
-                    <input type="text" name="strand" class="form-control @error('strand') is-invalid @enderror" id="strand" value="{{old('strand')}}" placeholder="Enter Strand">
+                    <label for="keywords">Keywords</label>
+                    <input type="text" name="keywords" class="form-control @error('keywords') is-invalid @enderror" id="keywords" value="{{old('keywords')}}" placeholder="Enter keywords">
+                    @error('keywords')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <textarea name="title" class="form-control @error('title') is-invalid @enderror" id="title" rows="10" placeholder="Enter title">{{old('title')}}</textarea>
                     @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -22,36 +31,27 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="level">Title</label>
-                    <textarea name="level" class="form-control @error('level') is-invalid @enderror" id="level" rows="10" placeholder="Enter level">{{old('level')}}</textarea>
-                    @error('content')
+                    <label for="abstract">Abstract</label>
+                    <textarea name="abstract" class="form-control @error('abstract') is-invalid @enderror" id="abstract" rows="10" placeholder="Enter abstract">{{old('abstract')}}</textarea>
+                    @error('abstract')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="research_type">Abstract</label>
-                    <textarea name="research_type" class="form-control @error('research_type') is-invalid @enderror" id="research_type" rows="10" placeholder="Enter research_type">{{old('research_type')}}</textarea>
-                    @error('content')
+                    <label for="file_url">File-URL</label>
+                    <textarea name="file_url" class="form-control @error('file_url') is-invalid @enderror" id="file_url" rows="10" placeholder="Enter file_url">{{old('file_url')}}</textarea>
+                    @error('file_url')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="research_type">File-URL</label>
-                    <textarea name="research_type" class="form-control @error('research_type') is-invalid @enderror" id="research_type" rows="10" placeholder="Enter research_type">{{old('research_type')}}</textarea>
-                    @error('content')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="research_type">Category_id</label>
-                    <textarea name="research_type" class="form-control @error('research_type') is-invalid @enderror" id="research_type" rows="10" placeholder="Enter research_type">{{old('research_type')}}</textarea>
-                    @error('content')
+                    <label for="category_id">Category_id</label>
+                    <textarea name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id" rows="10" placeholder="Enter category_id">{{old('category_id')}}</textarea>
+                    @error('category_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

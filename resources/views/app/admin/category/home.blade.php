@@ -39,9 +39,14 @@
                             <td>{{$category->level}}</td>
                             <td>{{$category->research_type}}</td>
                             <td>
-                                <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>&nbsp;
-                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                            </td>
+                            <form method="post" action="{{route('app.admin.category.destroy', $category)}}"> 
+                                <a href="{{route('admin.category.modify', $category)}}" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a> 
+                           
+                                @csrf 
+                                @method('delete')
+                            <button type="submit" onclick="return confirm('This will delete the entry!\nAre you sure?')" class="btn btn-danger btn-sm">Delete <span class="fas fa-trash"></span></a>
+                            </form>
+                         </td>
                         </tr>
                         @endforeach
                 </tbody>

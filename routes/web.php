@@ -52,3 +52,7 @@ Route::get('/books/{book}', [AdminBookController::class, 'show'])->name('admin.b
 Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
 Route::get('/app/admin/category/create', [AdminCategoryController::class, 'create'])->name('admin.category.create');
 Route::post('app/admin/category', [AdminCategoryController::class, 'store'])->name('admin.category.store');
+Route::get('app/admin/category/{category}', [AdminCategoryController::class, 'modify'])->name('admin.category.modify');
+Route::put('app/admin/category/{category}', [AdminCategoryController::class, 'update'])->name('admin.category.update');
+Route::delete('/app/admin/category/{category}', [AdminCategoryController::class, 'destroy'])->name('app.admin.category.destroy');
+

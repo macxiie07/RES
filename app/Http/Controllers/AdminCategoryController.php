@@ -39,7 +39,7 @@ class AdminCategoryController extends Controller
 
     public function modify(Category $category)
     {
-        return view('admin.category.modify', ['category' => $category]);
+        return view('app.admin.category.modify', ['category' => $category]);
     }
 
     public function update(Request $request, Category $category)
@@ -50,20 +50,15 @@ class AdminCategoryController extends Controller
             'research_type' => 'required',
         ]);
 
-        $blog->update($data);
+        $category->update($data);
 
-        return redirect(route('admin.category.modify', ['category' => $category]))->with('status', 'Blog has been successfully updated.');
-    }
-
-    public function delete(Category $category)
-    {
-        return view('admin.category.delete', ['category' => $category]);
+        return redirect(route('admin.category.index', ['category' => $category]))->with('status', 'Category has been successfully updated.');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
 
-        return redirect(route('admin.category.index'))->with('status', 'Blog has been successfully deleted.');
+        return redirect(route('app.admin.category.index'))->with('status', 'Blog has been successfully deleted.');
     }
 }

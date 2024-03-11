@@ -30,7 +30,7 @@
                         <th>Abstract</th>
                         <th>File-URL</th>
                         <th>Category ID</th>
-                        <th style="with: 250px">Action</th>
+                        <th style="width: 250px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,9 +40,9 @@
                             <td>{{$book->keywords}}</td>
                             <td>{{$book->title}}</td>
                             <td>{{$book->abstract}}</td>
-                            <td>{{$book->file_url}}</td>
-                            <td>{{$book->category_id}}</td>
-                            <td>    
+                            <td><a href="{{$book->file_url}}" target="_blank">{{$book->file_url}}</a></td>
+                            <td>{{$book->category->research_type}},{{$book->category->strand}}</td>
+                            <td>     
                                 <a href="{{ route('admin.books.show', ['book' =>$book->id])}}" class="btn btn-warning"><i class="fas fa-eye"></i></a>&nbsp;
                                 <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             </td>
