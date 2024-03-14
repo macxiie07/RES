@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Category;
 class AdminBookController extends Controller
 {
     public function __construct()
@@ -13,7 +14,7 @@ class AdminBookController extends Controller
 
     public function index()
     {
-        $book = Category::orderBy('created_at', 'DESC')->get();
+        $book = Book::orderBy('created_at', 'DESC')->get();
        
         return view('admin.books.home', ['books' => $book]);
     }
@@ -22,10 +23,12 @@ class AdminBookController extends Controller
 
         return view('app.admin.books.show', compact('book'));
       }
-    public function create()
-    {
-        return view('app.admin.books.create');
-    }
+     public function create()
+      {
+          // Fetch categories from the Category model
+          $categories = Category::orderBy('created_at', 'DESC')->get();
+          return view('app.admin.books.create', ['categories' => $categories]);
+      }
 
     public function store(Request $request)
     {
@@ -38,7 +41,6 @@ class AdminBookController extends Controller
         ]);
 
       Book::create($data);
-
         return redirect(route('admin.books.index'))->with('status', 'Category has been successfully saved.');
     }
 

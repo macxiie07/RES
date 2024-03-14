@@ -6,7 +6,43 @@
 
 
 @section('pageContent')
-    This is the content
+</nav>
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-sm-12">
+          <h1 class="m-0 text-dark">Welcome to RES Website!</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-body">
+              <p>
+                “RES” stands for Research E-Archiving System.
+                It refers to a suite of software that organizations
+                use to manage internal HR functions. From employee data
+                management to payroll, recruitment, benefits, training,
+                talent management, employee engagement, and employee
+                attendance, HRMS software helps HR professionals manage
+                the modern workforce. Also called
+                a human resources information system (HRIS), HRMS
+                systems put information about a company's most
+                valuable assets in front of the people who need them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection
 
 

@@ -44,7 +44,7 @@
                             <td>{{$book->category->research_type}},{{$book->category->strand}}</td>
                             <td>     
                                 <a href="{{ route('admin.books.show', ['book' =>$book->id])}}" class="btn btn-warning"><i class="fas fa-eye"></i></a>&nbsp;
-                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                <a href="{{route('admin.books.index')}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

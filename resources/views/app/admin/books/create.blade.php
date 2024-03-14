@@ -49,14 +49,20 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="category_id">Category_id</label>
-                    <textarea name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id" rows="10" placeholder="Enter category_id">{{old('category_id')}}</textarea>
+                    <label for="category_id">Category</label>
+                    <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
+                        <option value="">Select Category</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
                     @error('category_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
+
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Save</button>

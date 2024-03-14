@@ -120,7 +120,7 @@
   }
   .navbar {
     margin-bottom: 0;
-    background-color: skyblue;
+    background-color: green;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -207,6 +207,7 @@
         <li><a href="{{ route('homepage.index')}}">Home</a></li>
         <li><a href="{{ route('homepage.aboutus')}}">About</a></li>
         <li><a href="{{ route('homepage.contactus')}}">Contact Us</a></li>
+        <li><a href="http://127.0.0.1:8000/login">Login</a></li>
       </ul>
     </div>
   </div>
