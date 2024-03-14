@@ -53,7 +53,7 @@
                     <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
                         <option value="">Select Category</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}">{{ $category->strand }},{{ $category->level }},{{ $category->research_type }}</option>
                         @endforeach
                     </select>
                     @error('category_id')

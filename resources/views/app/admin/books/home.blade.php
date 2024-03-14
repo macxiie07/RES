@@ -29,7 +29,7 @@
                         <th>Title</th>
                         <th>Abstract</th>
                         <th>File-URL</th>
-                        <th>Category ID</th>
+                        <th>Category</th>
                         <th style="width: 250px">Action</th>
                     </tr>
                 </thead>
@@ -41,7 +41,7 @@
                             <td>{{$book->title}}</td>
                             <td>{{$book->abstract}}</td>
                             <td><a href="{{$book->file_url}}" target="_blank">{{$book->file_url}}</a></td>
-                            <td>{{$book->category->research_type}},{{$book->category->strand}}</td>
+                            <td>{{$book->category->research_type}},{{$book->category->strand}},{{$book->category->level}}</td>
                             <td>     
                                 <a href="{{ route('admin.books.show', ['book' =>$book->id])}}" class="btn btn-warning"><i class="fas fa-eye"></i></a>&nbsp;
                                 <a href="{{route('admin.books.index')}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>

@@ -74,8 +74,8 @@
                     
                 </div>
                 <div class="form-group">
-                    <label for="title">Category_id</label>
-                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{$book->category_id}}" readonly>
+                    <label for="title">Category</label>
+                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{$book->category->research_type}},{{$book->category->strand}},{{$book->category->level}}" readonly>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                          <strong>{{ $message }}</strong>
