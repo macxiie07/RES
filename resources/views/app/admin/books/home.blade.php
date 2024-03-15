@@ -7,21 +7,25 @@
 @stop
 
 @section('content')
-    <div class="card">
+<div class="row">
+        <div class="col-12">
+        <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Archived list</h3>
-            <div class="card-tools">
-                <a href="{{route('admin.books.create')}}" class="btn btn-primary form-control float-right">Add new</a>
-            </div>
+        <h3 class="card-title">Responsive Hover Table</h3>
+        <div class="form-inline">
+<div class="input-group" data-widget="sidebar-search">
+<input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+<div class="input-group-append">
+<button class="btn btn-sidebar">
+<i class="fas fa-search fa-fw"></i>
+</button>
+</div>
+</div>
+</div>
         </div>
-        <div class="card-body">
-            @if(session('status'))
-                <div class="alert alert-success alert-dismissible auto-close">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    {{ session('status') }}
-                </div>            
-            @endif
-            <table class="table table-bordered">
+        </div>
+     </div>
+     <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th style="width: 10px">ID</th>
@@ -50,8 +54,7 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
+</div>
 @stop
 
 @section('footer')

@@ -1,7 +1,7 @@
 @extends('homepage.template');
 
 @section('pageTitle')
-    Home
+    &nbsp; &nbsp;Home
 @endsection
 
 
@@ -23,7 +23,7 @@
         <div class="col-md-6">
           <div class="card card-primary">
             <div class="card-body">
-              <p>
+              <p style='color: white; line-height: 1.6;'>
                 “RES” stands for Research E-Archiving System.
                 It refers to a suite of software that organizations
                 use to manage internal HR functions. From employee data

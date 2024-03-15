@@ -66,7 +66,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Save</button>
-                <a href="{{route('admin.category.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
+                <a href="{{route('admin.books.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
             </div>
         </form>
     </div>

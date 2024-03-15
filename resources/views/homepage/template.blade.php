@@ -200,7 +200,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <img src="pic/logo.png" width="50 px" style='float: left'>
+      <a class="navbar-brand" href="#myPage">Research E-Archiving System</a> 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -213,9 +214,19 @@
   </div>
 </nav>
 
+
+
 <!-- Container (About Section) -->
 <br><br><br>
 <div id="about" class="container">
+<style>
+body {
+  background-image: url('pic/2020-07-06.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+</style>
   <div class="row">
     <div class="col-sm-12">
       <h2>@yield('pageTitle')</h2><br>
