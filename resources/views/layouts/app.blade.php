@@ -32,15 +32,65 @@ body {
     #container img {
         width: 100%;
     }
+    .navbar {
+    margin-bottom: 0;
+    background-color: green;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+    
 </style>
     
 <div id="app">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="pic/logo.png" width="50 px" style='float: left'>
+      <a class="navbar-brand" href="{{ route('homepage.index')}}">Research E-Archiving System</a> 
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ route('homepage.index')}}">Home</a></li>
+        <li><a href="{{ route('homepage.aboutus')}}">About</a></li>
+        <li><a href="{{ route('homepage.contactus')}}">Contact Us</a></li>
+        <li><a href="http://127.0.0.1:8000/login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <br><br><br><br><br>
     <div class="content">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">{{ __('Login') }}</div>
+                        <div class="card-header" style='text-align: center;'>{{ __('Login') }}</div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('login') }}">

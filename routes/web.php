@@ -40,14 +40,15 @@ Route::middleware(['active'])->group(function () {
         Route::delete('/app/admin/users/{user}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
         Route::get('/app/admin/users/{user}/reset', [AdminUserController::class, 'reset'])->name('admin.users.reset');
         Route::patch('/app/admin/users/{user}', [AdminUserController::class, 'resetOk'])->name('admin.users.resetOk');
+        Route::get('/app/admin/books/create', [AdminBookController::class, 'create'])->name('admin.books.create');
+    Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
     });
 
     Route::get('/admin/auth', [AdminAuthController::class, 'index'])->name('admin.auth.index');
     Route::put('/admin/auth', [AdminAuthController::class, 'changePassword'])->name('admin.auth.changePassword');
 
     Route::get('/app/admin/books', [BookController::class, 'index'])->name('admin.books.index');
-    Route::get('/app/admin/books/create', [AdminBookController::class, 'create'])->name('admin.books.create');
-    Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
+    
     Route::get('/books/{book}', [AdminBookController::class, 'show'])->name('admin.books.show');
 
     Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');

@@ -300,7 +300,7 @@ return [
         ], */
         [
             'text'        => 'Dashboard',
-            'url'         => 'app/admin',
+            'url'         => 'home',
             'icon'        => 'nav-icon fas fa-tachometer-alt',
             'label_color' => 'success',
         ],
@@ -316,13 +316,13 @@ return [
             'icon'        => 'nav-icon fas fa-book',
             'label_color' => 'success',
         ],
+        ['header' => 'account_settings'],
         [
             'text'        => 'User Management',
             'url'         => 'app/admin/users',
             'icon'        => 'nav-icon fas fa-users',
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
