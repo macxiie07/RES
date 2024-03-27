@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('strand');
             $table->string('level');
             $table->string('research_type');
-        
             $table->timestamps();
         });
     }

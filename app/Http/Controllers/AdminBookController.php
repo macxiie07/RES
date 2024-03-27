@@ -33,7 +33,7 @@ class AdminBookController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'keywords' => 'required',
+            'authors' => 'required',
             'title' => 'required',
             'abstract' => 'required',
             'file_url' => 'required',
@@ -52,7 +52,7 @@ class AdminBookController extends Controller
     public function update(Request $request, Book $book)
     {
         $data = $request->validate([
-            'keywords' => 'required',
+            'authors' => 'required',
             'title' => 'required',
             'abstract' => 'required',
             'file_url' => 'required',

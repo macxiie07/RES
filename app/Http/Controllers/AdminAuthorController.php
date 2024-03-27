@@ -44,9 +44,9 @@ class AdminAuthorController extends Controller
     public function update(Request $request, Author $author)
     {
         $data = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'middle_initial' => 'required',
+            'Authors' => 'required',
+            'Affiliation' => 'required',
+            'Year' => 'required',
         ]);
 
         $author->update($data);

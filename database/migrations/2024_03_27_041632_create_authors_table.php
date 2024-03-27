@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('Authors');
             $table->string('Affiliations');
-            $table->int('Year');  
+            $table->integer('Year');
             $table->timestamps();
         });
     }

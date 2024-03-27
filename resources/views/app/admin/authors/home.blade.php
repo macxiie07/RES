@@ -26,7 +26,7 @@
                     <tr>
                         <th style="width: 10px">ID</th>
                         <th>Authors</th>
-                        <th>Affiliation</th>
+                        <th>Affiliations</th>
                         <th>Year</th>
                         <th  style="width: 170px">Action</th>
                     </tr>
@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{$author->id}}</td>
                             <td>{{$author->Authors}}</td>
-                            <td>{{$author->Affiliation}}</td>
+                            <td>{{$author->Affiliations}}</td>
                             <td>{{$author->Year}}</td>
                             <td>
                             <form method="post" action=""> 
