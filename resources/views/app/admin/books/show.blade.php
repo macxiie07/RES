@@ -3,7 +3,7 @@
 @section('title', 'Comments -> View comments')
 
 @section('content_header')
-    <h1>Comments  ->View Comments</h1>
+    <h1>View Books</h1>
 @stop
 
 @section('content')

@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\App\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminBookController;
+use App\Http\Controllers\AdminAuthorController;
 
 
 /*
@@ -41,7 +43,18 @@ Route::middleware(['active'])->group(function () {
         Route::get('/app/admin/users/{user}/reset', [AdminUserController::class, 'reset'])->name('admin.users.reset');
         Route::patch('/app/admin/users/{user}', [AdminUserController::class, 'resetOk'])->name('admin.users.resetOk');
         Route::get('/app/admin/books/create', [AdminBookController::class, 'create'])->name('admin.books.create');
-    Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
+        Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
+        Route::delete('/app/admin/books/{book}', [AdminBookController::class, 'destroy'])->name('app.admin.books.destroy');
+        Route::get('/app/admin/category/create', [AdminCategoryController::class, 'create'])->name('admin.category.create');
+        Route::post('app/admin/category', [AdminCategoryController::class, 'store'])->name('admin.category.store');
+        Route::get('app/admin/category/{category}', [AdminCategoryController::class, 'modify'])->name('admin.category.modify');
+        Route::put('app/admin/category/{category}', [AdminCategoryController::class, 'update'])->name('admin.category.update');
+        Route::delete('/app/admin/category/{category}', [AdminCategoryController::class, 'destroy'])->name('app.admin.category.destroy');
+        Route::get('/app/admin/authors/create', [AdminAuthorController::class, 'create'])->name('admin.authors.create');
+        Route::post('app/admin/authors', [AdminAuthorController::class, 'store'])->name('admin.authors.store');
+        Route::get('app/admin/authors/{author}', [AdminAuthorController::class, 'modify'])->name('admin.authors.modify');
+        Route::put('app/admin/authors/{author}', [AdminAuthorController::class, 'update'])->name('admin.authors.update');
+        Route::delete('/app/admin/authors/{author}', [AdminAuthorController::class, 'destroy'])->name('app.admin.authors.destroy');
     });
 
     Route::get('/admin/auth', [AdminAuthController::class, 'index'])->name('admin.auth.index');
@@ -52,9 +65,6 @@ Route::middleware(['active'])->group(function () {
     Route::get('/books/{book}', [AdminBookController::class, 'show'])->name('admin.books.show');
 
     Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
-    Route::get('/app/admin/category/create', [AdminCategoryController::class, 'create'])->name('admin.category.create');
-    Route::post('app/admin/category', [AdminCategoryController::class, 'store'])->name('admin.category.store');
-    Route::get('app/admin/category/{category}', [AdminCategoryController::class, 'modify'])->name('admin.category.modify');
-    Route::put('app/admin/category/{category}', [AdminCategoryController::class, 'update'])->name('admin.category.update');
-    Route::delete('/app/admin/category/{category}', [AdminCategoryController::class, 'destroy'])->name('app.admin.category.destroy');
+
+    Route::get('/app/admin/authors', [AuthorController::class, 'index'])->name('admin.authors.index');
 });

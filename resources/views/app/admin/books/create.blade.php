@@ -3,7 +3,8 @@
 @section('title', 'Users -> Create a new blog')
 
 @section('content_header')
-    <h1>Users -> Create a new blog</h1>
+    <h1>Users -> Create a new book</h1>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 @stop
 
 @section('content')
@@ -13,7 +14,7 @@
             @method('post')
             <div class="card-body">
                 <div class="form-group">
-                    <label for="keywords">Keywords</label>
+                    <label for="keywords">Authors</label>
                     <input type="text" name="keywords" class="form-control @error('keywords') is-invalid @enderror" id="keywords" value="{{old('keywords')}}" placeholder="Enter keywords">
                     @error('keywords')
                         <span class="invalid-feedback" role="alert">
@@ -49,13 +50,13 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="category_id">Category</label>
-                    <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
-                        <option value="">Select Category</option>
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->strand }},{{ $category->level }},{{ $category->research_type }}</option>
-                        @endforeach
-                    </select>
+                <label for="category_id">Category</label>
+    <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
+        <option value="">----</option>
+        @foreach($categories as $category)
+            <option value="{{ $category->id }}">{{ $category->strand }},{{ $category->level }},{{ $category->research_type }}</option>
+        @endforeach
+    </select>
                     @error('category_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -82,4 +83,11 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#category_id').select2();
+        });
+    </script>
 @stop

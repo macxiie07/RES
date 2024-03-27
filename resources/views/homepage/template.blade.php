@@ -239,7 +239,7 @@ body {
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Copyright &copy; 2024. <a href="#" title="Visit the website!">www.res.com</a>. All rights reserved.</p>
+  <p>Copyright &copy; 2024. <strong>RES Admin</strong>. All rights reserved.</p>
 </footer>
 
 <script>

@@ -59,6 +59,6 @@ class AdminCategoryController extends Controller
     {
         $category->delete();
 
-        return redirect(route('app.admin.category.index'))->with('status', 'Blog has been successfully deleted.');
+        return redirect(route('admin.category.index'))->with('status', 'Category has been successfully deleted.');
     }
 }

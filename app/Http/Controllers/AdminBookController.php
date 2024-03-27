@@ -64,15 +64,10 @@ class AdminBookController extends Controller
         return redirect(route('admin.books.modify', ['books' => $book]))->with('status', 'Blog has been successfully updated.');
     }
 
-    public function delete( Book $book)
-    {
-        return view('admin.books.delete', ['books' => $book]);
-    }
-
-    public function destroy( Book $book)
+    public function destroy(Book $book)
     {
         $book->delete();
 
-        return redirect(route('admin.books.index'))->with('status', 'Blog has been successfully deleted.');
+        return redirect(route('admin.books.index'))->with('status', 'Book has been successfully deleted.');
     }
 }

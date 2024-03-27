@@ -3,18 +3,18 @@
 @section('title', 'Users -> Create a new blog')
 
 @section('content_header')
-    <h1>Users -> Create a new category</h1>
+    <h1> Add new authors</h1>
 @stop
 
 @section('content')
     <div class="card">
-        <form method="post" action="{{route('admin.category.store')}}">
+        <form method="post" action="{{route('admin.authors.store')}}">
             @csrf 
             @method('post')
             <div class="card-body">
                 <div class="form-group">
-                    <label for="strand">Strand</label>
-                    <input type="text" name="strand" class="form-control @error('strand') is-invalid @enderror" id="strand" value="{{old('strand')}}" placeholder="Enter Strand">
+                    <label for="Authors">Authors</label>
+                    <input type="text" name="Authors" class="form-control @error('Authors') is-invalid @enderror" id="Authors" value="{{old('Authors')}}" placeholder="Enter Authors">
                     @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -22,8 +22,8 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="level">Level</label>
-                    <textarea name="level" class="form-control @error('level') is-invalid @enderror" id="level" rows="10" placeholder="Enter level">{{old('level')}}</textarea>
+                    <label for="Affiliation">Affiliation</label>
+                    <textarea name="Affiliation" class="form-control @error('Affiliation') is-invalid @enderror" id="Affiliation" rows="10" placeholder="Enter Affiliation">{{old('Affiliation')}}</textarea>
                     @error('content')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -31,8 +31,8 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="research_type">Research_type</label>
-                    <textarea name="research_type" class="form-control @error('research_type') is-invalid @enderror" id="research_type" rows="10" placeholder="Enter research_type">{{old('research_type')}}</textarea>
+                    <label for="Year">Year</label>
+                    <textarea name="Year" class="form-control @error('Year') is-invalid @enderror" id="Year" rows="10" placeholder="Enter Year">{{old('Year')}}</textarea>
                     @error('content')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Save</button>
-                <a href="{{route('admin.category.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
+                <a href="{{route('admin.authors.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
             </div>
         </form>
     </div>

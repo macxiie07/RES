@@ -3,7 +3,7 @@
 @section('title', 'Category -> Modify category')
 
 @section('content_header')
-    <h1> Modify category</h1>
+    <h1> Modify authors</h1>
 @stop
 
 @section('content')

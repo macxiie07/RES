@@ -49,7 +49,7 @@ class AdminUserController extends Controller
             'user_id' => $newUser->id,
         ]);
 
-        return redirect(route('app.admin.users.home'))->with('status', 'User has been succesfully saved!');
+        return redirect(route('admin.users.index'))->with('status', 'User has been succesfully saved!');
     }
 
     public function modify(User $user)
@@ -84,7 +84,7 @@ class AdminUserController extends Controller
     {
        $user->delete();
 
-       return redirect(route('app.admin.users.index'))->with('status', 'User has been succesfully deleted!');
+       return redirect(route('admin.users.index'))->with('status', 'User has been succesfully deleted!');
     }
 
     public function reset(User $user)

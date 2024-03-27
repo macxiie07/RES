@@ -54,7 +54,7 @@
 @stop
 
 @section('footer')
-    Copyright &copy 2023. <a href='/admin'>RES</a>. All rights reserved.
+Copyright &copy; 2024. <strong>RES Admin</strong>. All rights reserved.
 @endsection
 
 @section('css')

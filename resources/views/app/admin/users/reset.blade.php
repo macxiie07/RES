@@ -3,7 +3,7 @@
 @section('title', 'Users -> Reset user password')
 
 @section('content_header')
-    <h1>Users -> Reset User Password</h1>
+    <h1>Reset User Password</h1>
 @stop
 
 @section('content')

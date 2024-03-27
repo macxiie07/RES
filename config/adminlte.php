@@ -316,6 +316,12 @@ return [
             'icon'        => 'nav-icon fas fa-book',
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Authors',
+            'url'         => 'app/admin/authors',
+            'icon'        => 'nav-icon fas fa-user',
+            'label_color' => 'success',
+        ],
         ['header' => 'account_settings'],
         [
             'text'        => 'User Management',

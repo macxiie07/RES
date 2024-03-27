@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header"> 
+    <div class="card-header" > 
         <div class="card-tools">
                 <a href="{{route('admin.books.create')}}" class="btn btn-primary form-control float-right">Add Books</a>
          </div>
@@ -21,7 +21,7 @@
         <thead>
           <tr>
                                 <th style="width: 10px">ID</th>
-                                <th>Keywords</th>
+                                <th>Authors</th>
                                 <th>Title</th>
                                 <th>Abstract</th>
                                 <th>File-URL</th>
@@ -33,14 +33,17 @@
                             @foreach($book as $book)
                                 <tr>
                                     <td>{{$book->id}}</td>
-                                    <td>{{$book->keywords}}</td>
+                                    <td>{{$book->authors}}</td>
                                     <td>{{$book->title}}</td>
                                     <td>{{$book->abstract}}</td>
                                     <td><a href="{{$book->file_url}}" target="_blank">{{$book->file_url}}</a></td>
                                     <td>{{$book->category->research_type}},{{$book->category->strand}},{{$book->category->level}}</td>
-                                    <td>     
+                                    <td>      
+                                     <form method="post" action="{{route('app.admin.books.destroy', $book)}}"> 
                                         <a href="{{ route('admin.books.show', ['book' =>$book->id])}}" class="btn btn-warning"><i class="fas fa-eye"></i></a>&nbsp;
-                                        <a href="{{route('admin.books.index')}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            @csrf 
+                                          @method('delete')
+                                    <button type="submit" onclick="return confirm('This will delete the entry!\nAre you sure?')" class="btn btn-danger btn-sm"> <span class="fas fa-trash"></span></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -55,7 +58,7 @@
 @stop
 
 @section('footer')
-    Copyright &copy 2023. <a href='/admin'>RES</a>. All rights reserved.
+Copyright &copy; 2024. <strong>RES Admin</strong>. All rights reserved.
 @endsection
 
 @section('css')
