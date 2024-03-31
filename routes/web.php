@@ -27,7 +27,7 @@ Route::get('/',[HomepageController::class, 'index'])->name('homepage.index');
 Route::get('/about-us',[HomepageController::class, 'aboutus'])->name('homepage.aboutus');
 Route::get('/contact-us',[HomepageController::class, 'contactus'])->name('homepage.contactus');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::middleware(['active'])->group(function () {
     Route::get('/home', [AdminDashboard::class, 'index'])->name('app.admin.index');

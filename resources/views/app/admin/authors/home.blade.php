@@ -27,7 +27,7 @@
                         <th style="width: 10px">ID</th>
                         <th>Authors</th>
                         <th>Affiliations</th>
-                        <th>Year</th>
+                        <th>Leader</th>
                         <th  style="width: 170px">Action</th>
                     </tr>
                 </thead>
@@ -37,10 +37,10 @@
                             <td>{{$author->id}}</td>
                             <td>{{$author->Authors}}</td>
                             <td>{{$author->Affiliations}}</td>
-                            <td>{{$author->Year}}</td>
+                            <td>{{$author->Leader}}</td>
                             <td>
-                            <form method="post" action=""> 
-                                <a href="" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a> 
+                            <form method="post" action="{{route('app.admin.authors.destroy', $author)}}"> 
+                                <a href="{{route('admin.authors.modify', $author)}}" class="btn btn-warning btn-sm">Modify <span class="fas fa-edit"></span></a> 
                            
                                 @csrf 
                                 @method('delete')

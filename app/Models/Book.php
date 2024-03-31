@@ -10,7 +10,7 @@ class Book extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'authors',
+        'authors_id',
         'title',
         'abstract',
         'file_url',
@@ -22,5 +22,10 @@ class Book extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(author::class);
     }
 }

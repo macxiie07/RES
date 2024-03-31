@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Author;
 class AdminBookController extends Controller
 {
     public function __construct()
@@ -23,17 +24,18 @@ class AdminBookController extends Controller
 
         return view('app.admin.books.show', compact('book'));
       }
-     public function create()
-      {
-          // Fetch categories from the Category model
-          $categories = Category::orderBy('created_at', 'DESC')->get();
-          return view('app.admin.books.create', ['categories' => $categories]);
-      }
+public function create()
+{
+    $authors = Author::orderBy('created_at', 'DESC')->get();
+    $categories = Category::orderBy('created_at', 'DESC')->get();
+    
+    return view('app.admin.books.create', ['authors' => $authors, 'categories' => $categories]);
+}
 
     public function store(Request $request)
     {
         $data = $request->validate([
-            'authors' => 'required',
+            'authors_id' => 'required',
             'title' => 'required',
             'abstract' => 'required',
             'file_url' => 'required',
@@ -52,7 +54,7 @@ class AdminBookController extends Controller
     public function update(Request $request, Book $book)
     {
         $data = $request->validate([
-            'authors' => 'required',
+            'authors_id' => 'required',
             'title' => 'required',
             'abstract' => 'required',
             'file_url' => 'required',

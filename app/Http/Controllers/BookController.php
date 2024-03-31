@@ -32,8 +32,10 @@ class BookController extends Controller
     }
 
     public function create()
-    {
+{
     $categories = Category::all();
-    return view('app.admin.books.create', ['categories' => $categories]);
-    }
+    $authors = Author::all();
+    
+    return view('app.admin.books.create', ['authors' => $authors, 'categories' => $categories]);
+}
 }

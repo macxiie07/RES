@@ -14,14 +14,18 @@
             @method('post')
             <div class="card-body">
                 <div class="form-group">
-                    <label for="keywords">Authors</label>
-                    <input type="text" name="keywords" class="form-control @error('keywords') is-invalid @enderror" id="keywords" value="{{old('keywords')}}" placeholder="Enter keywords">
-                    @error('keywords')
+                    <label for="author_id">Authors</label>
+                    <select name="author_id" class="form-control @error('author_id') is-invalid @enderror" id="author_id">
+        <option value="">----</option>
+        @foreach($authors as $author)
+            <option value="{{ $author->id }}">{{ $author->Authors}}</option>
+        @endforeach
+    </select>
+                    @error('author_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
-                </div>
+                    @enderror   
                 <div class="form-group">
                     <label for="title">Title</label>
                     <textarea name="title" class="form-control @error('title') is-invalid @enderror" id="title" rows="10" placeholder="Enter title">{{old('title')}}</textarea>
@@ -88,6 +92,11 @@
     <script>
         $(document).ready(function() {
             $('#category_id').select2();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#author_id').select2();
         });
     </script>
 @stop

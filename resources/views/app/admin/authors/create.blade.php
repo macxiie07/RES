@@ -15,25 +15,25 @@
                 <div class="form-group">
                     <label for="Authors">Authors</label>
                     <input type="text" name="Authors" class="form-control @error('Authors') is-invalid @enderror" id="Authors" value="{{old('Authors')}}" placeholder="Enter Authors">
-                    @error('title')
+                    @error('authors')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="Affiliation">Affiliation</label>
-                    <textarea name="Affiliation" class="form-control @error('Affiliation') is-invalid @enderror" id="Affiliation" rows="10" placeholder="Enter Affiliation">{{old('Affiliation')}}</textarea>
-                    @error('content')
+                    <label for="Affiliations">Affiliations</label>
+                    <textarea name="Affiliations" class="form-control @error('Affiliations') is-invalid @enderror" id="Affiliations" rows="10" placeholder="Enter Affiliations">{{old('Affiliations')}}</textarea>
+                    @error('affiliation')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="Year">Year</label>
-                    <textarea name="Year" class="form-control @error('Year') is-invalid @enderror" id="Year" rows="10" placeholder="Enter Year">{{old('Year')}}</textarea>
-                    @error('content')
+                    <label for="leader">Leader</label>
+                    <textarea name="leader" class="form-control @error('leader') is-invalid @enderror" id="leader" rows="10" placeholder="Enter leader">{{old('leader')}}</textarea>
+                    @error('leader')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

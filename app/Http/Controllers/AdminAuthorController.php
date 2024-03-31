@@ -27,13 +27,13 @@ class AdminAuthorController extends Controller
     {
         $data = $request->validate([
             'Authors' => 'required',
-            'Affiliation' => 'required',
-            'Year' => 'required',
+            'Affiliations' => 'required',
+            'Leader' => 'required',
         ]);
 
         Author::create($data);
 
-        return redirect(route('admin.authors.home'))->with('status', 'Author has been successfully saved.');
+        return redirect(route('admin.authors.index'))->with('status', 'Author has been successfully saved.');
     }
 
     public function modify(Author $author)
@@ -45,8 +45,8 @@ class AdminAuthorController extends Controller
     {
         $data = $request->validate([
             'Authors' => 'required',
-            'Affiliation' => 'required',
-            'Year' => 'required',
+            'Affiliations' => 'required',
+            'Leader' => 'required',
         ]);
 
         $author->update($data);

@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="card">
-        <form method="post" action="{{route('admin.category.update', $category)}}">
+        <form method="post" action="{{route('admin.authors.update', $author)}}">
             @csrf 
             @method('put')
             <div class="card-body">
@@ -19,27 +19,27 @@
                     </div>            
                 @endif
                 <div class="form-group">
-                    <label for="strand">Strand</label>
-                    <input type="text" name="strand" class="form-control @error('strand') is-invalid @enderror" id="strand" value="{{$category->strand}}" placeholder="Enter strand">
-                    @error('strand')
+                    <label for="Authors">Authors</label>
+                    <input type="text" name="Authors" class="form-control @error('Authors') is-invalid @enderror" id="Authors" value="{{$author->Authors}}" placeholder="Enter Authors">
+                    @error('Authors')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="level">Level</label>
-                    <textarea name="level" class="form-control @error('level') is-invalid @enderror" id="level" rows="10" placeholder="Enter level">{{$category->level}}</textarea>
-                    @error('level')
+                    <label for="Affiliations">Affiliations</label>
+                    <textarea name="Affiliations" class="form-control @error('Affiliations') is-invalid @enderror" id="Affiliations" rows="10" placeholder="Enter Affiliations">{{$author->Affiliations}}</textarea>
+                    @error('Affiliations')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="research_type">Research_type</label>
-                    <textarea name="research_type" class="form-control @error('research_type') is-invalid @enderror" id="research_type" rows="10" placeholder="Enter research_type">{{$category->research_type}}</textarea>
-                    @error('research_type')
+                    <label for="Leader">Leader</label>
+                    <textarea name="Leader" class="form-control @error('Leader') is-invalid @enderror" id="Leader" rows="10" placeholder="Enter Leader">{{$author->Leader}}</textarea>
+                    @error('Leader')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -48,7 +48,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
-                <a href="{{route('admin.category.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
+                <a href="{{route('admin.authors.index')}}" type="button" class="btn btn-default float-right">Cancel</a>
             </div>
         </form>
     </div>
