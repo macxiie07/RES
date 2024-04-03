@@ -18,7 +18,7 @@
                     <select name="author_id" class="form-control @error('author_id') is-invalid @enderror" id="author_id">
         <option value="">----</option>
         @foreach($authors as $author)
-            <option value="{{ $author->id }}">{{ $author->Authors}}</option>
+            <option value="{{ $author->id }}">{{ $author->Leader}}</option>
         @endforeach
     </select>
                     @error('author_id')

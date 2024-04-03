@@ -31,9 +31,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="leader">Leader</label>
-                    <textarea name="leader" class="form-control @error('leader') is-invalid @enderror" id="leader" rows="10" placeholder="Enter leader">{{old('leader')}}</textarea>
-                    @error('leader')
+                    <label for="Leader">Leader</label>
+                    <textarea name="Leader" class="form-control @error('Leader') is-invalid @enderror" id="Leader" rows="10" placeholder="Enter Leader">{{old('Leader')}}</textarea>
+                    @error('Leader')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

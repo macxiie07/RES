@@ -33,7 +33,7 @@
                             @foreach($book as $book)
                                 <tr>
                                     <td>{{$book->id}}</td>
-                                    <td>{{$book->authors->authors}}</td>
+                                    <td>{{$book->authors->Authors}}</td>
                                     <td>{{$book->title}}</td>
                                     <td>{{$book->abstract}}</td>
                                     <td><a href="{{$book->file_url}}" target="_blank">{{$book->file_url}}</a></td>
