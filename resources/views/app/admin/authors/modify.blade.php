@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Category -> Modify category')
+@section('title', 'Authors -> Modify author')
 
 @section('content_header')
     <h1> Modify authors</h1>

@@ -35,7 +35,7 @@ public function create()
     public function store(Request $request)
     {
         $data = $request->validate([
-            'authors_id' => 'required',
+            'author_id' => 'required',
             'title' => 'required',
             'abstract' => 'required',
             'file_url' => 'required',
@@ -54,7 +54,7 @@ public function create()
     public function update(Request $request, Book $book)
     {
         $data = $request->validate([
-            'authors_id' => 'required',
+            'author_id' => 'required',
             'title' => 'required',
             'abstract' => 'required',
             'file_url' => 'required',

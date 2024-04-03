@@ -12,7 +12,7 @@
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h1 class="m-0 text-dark">Welcome to RES Website!</h1>
+          <h1 class="m-0" style='color: white;'>Welcome to RES Website!</h1>
         </div>
       </div>
     </div>

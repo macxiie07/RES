@@ -61,18 +61,20 @@ class AdminUserController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|min:8',
+            'email' => 'required',
             'level' => 'required',
             'status' => 'required',
         ]);
 
         $user->update(['name' => $data['name']]);
-
+        $user->update(['email' => $data['email']]);
         $user->role->update([
+            'email' => $data['email'],
             'level' => $data['level'],
             'status' => $data['status'],
         ]);
 
-        return redirect(route('app.admin.users.modify', ['user' => $user]))->with('status', 'User has been successfully updated!');
+        return redirect(route('admin.users.modify', ['user' => $user]))->with('status', 'User has been successfully updated!');
     }
 
     public function delete(User $user)
@@ -96,6 +98,6 @@ class AdminUserController extends Controller
     {
        $user->update(['password' => Hash::make('P@ssw0rd')]);
 
-       return redirect(route('app.admin.users.index'))->with('status', 'User password has been succesfully reset!');
+       return redirect(route('admin.users.index'))->with('status', 'User password has been succesfully reset!');
     }
 }

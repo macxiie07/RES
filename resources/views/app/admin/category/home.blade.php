@@ -11,10 +11,11 @@
         <div class="card-header">
             <h3 class="card-title">User list</h3>
             <div class="card-tools">
-                <a href="{{route('admin.category.create')}}" class="btn btn-primary form-control float-right">Add new user</a>
+                <a href="{{route('admin.category.create')}}" class="btn btn-primary form-control float-right">Add New</a>
             </div>
         </div>
         <div class="card-body">
+        <div class="table-responsive">
             @if(session('status'))
                 <div class="alert alert-success alert-dismissible auto-close">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -51,6 +52,7 @@
                         @endforeach
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 @stop

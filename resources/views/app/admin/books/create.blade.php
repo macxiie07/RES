@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Users -> Create a new blog')
+@section('title', 'Books -> Create a new record')
 
 @section('content_header')
-    <h1>Users -> Create a new book</h1>
+    <h1>Add New Archive</h1>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 @stop
 
@@ -18,7 +18,7 @@
                     <select name="author_id" class="form-control @error('author_id') is-invalid @enderror" id="author_id">
         <option value="">----</option>
         @foreach($authors as $author)
-            <option value="{{ $author->id }}">{{ $author->Leader}}</option>
+            <option value="{{ $author->id }}">{{ $author->Authors}}</option>
         @endforeach
     </select>
                     @error('author_id')

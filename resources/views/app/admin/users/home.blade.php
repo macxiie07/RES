@@ -15,6 +15,7 @@
             </div>
         </div>
         <div class="card-body">
+        <div class="table-responsive">
             @if(session('status'))
                 <div class="alert alert-success alert-dismissible auto-close">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -49,6 +50,7 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 @stop

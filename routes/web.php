@@ -27,7 +27,7 @@ Route::get('/',[HomepageController::class, 'index'])->name('homepage.index');
 Route::get('/about-us',[HomepageController::class, 'aboutus'])->name('homepage.aboutus');
 Route::get('/contact-us',[HomepageController::class, 'contactus'])->name('homepage.contactus');
 
-Auth::routes(['register' => true]);
+Auth::routes(['register' => false]);
 
 Route::middleware(['active'])->group(function () {
     Route::get('/home', [AdminDashboard::class, 'index'])->name('app.admin.index');
@@ -55,6 +55,7 @@ Route::middleware(['active'])->group(function () {
         Route::get('app/admin/authors/{author}', [AdminAuthorController::class, 'modify'])->name('admin.authors.modify');
         Route::put('app/admin/authors/{author}', [AdminAuthorController::class, 'update'])->name('admin.authors.update');
         Route::delete('/app/admin/authors/{author}', [AdminAuthorController::class, 'destroy'])->name('app.admin.authors.destroy');
+        Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
     });
 
     Route::get('/admin/auth', [AdminAuthController::class, 'index'])->name('admin.auth.index');
@@ -64,7 +65,7 @@ Route::middleware(['active'])->group(function () {
     
     Route::get('/books/{book}', [AdminBookController::class, 'show'])->name('admin.books.show');
 
-    Route::get('/app/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
+    
 
     Route::get('/app/admin/authors', [AuthorController::class, 'index'])->name('admin.authors.index');
 });

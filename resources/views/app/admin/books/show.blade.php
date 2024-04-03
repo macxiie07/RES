@@ -3,7 +3,7 @@
 @section('title', 'Comments -> View comments')
 
 @section('content_header')
-    <h1>View Books</h1>
+    <h1>View Archived</h1>
 @stop
 
 @section('content')
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Title</label>
-                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{$book->keywords}}" readonly>
+                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{$book->title}}" readonly>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                          <strong>{{ $message }}</strong>
@@ -39,8 +39,8 @@
                     
                 </div>
                 <div class="form-group">
-                    <label for="comment">Keywords</label>
-                    <input type="text" name="comment" class="form-control @error('comment') is-invalid @enderror" id="comment" value="{{$book->title}}" readonly>
+                    <label for="author">Authors</label>
+                    <input type="text" name="author" class="form-control @error('author') is-invalid @enderror" id="author" value="{{$book->author->Authors}}" readonly>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                          <strong>{{ $message }}</strong>

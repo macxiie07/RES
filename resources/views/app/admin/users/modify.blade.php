@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{$user->email}}" placeholder="Enter email" readonly>
+                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{$user->email}}" placeholder="Enter email" >
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

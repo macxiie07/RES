@@ -201,14 +201,14 @@
         <span class="icon-bar"></span>                        
       </button>
       <img src="pic/logo.png" width="50 px" style='float: left'>
-      <a class="navbar-brand" href="#myPage">Research E-Archiving System</a> 
+      <a class="navbar-brand" href="#myPage">Research Archive</a> 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ route('homepage.index')}}">Home</a></li>
         <li><a href="{{ route('homepage.aboutus')}}">About</a></li>
         <li><a href="{{ route('homepage.contactus')}}">Contact Us</a></li>
-        <li><a href="http://127.0.0.1:8000/login">Login</a></li>
+        <li><a href="{{ route('login')}}">Login</a></li>
       </ul>
     </div>
   </div>
