@@ -34,14 +34,15 @@
                                 @foreach($book as $book)
                                     <tr>
                                         <td>{{$book->id}}</td>
-                                        <td>{{$book->author->Authors}}</td>
-                                        <td>{{$book->title}}</td>
-                                        <td>{{$book->abstract}}</td>
+                                        <td>{{substr($book->author->Authors,0,20)}}...</td>
+                                        <td>{{substr($book->title, 0, 30)}}...</td>
+                                        <td>{{substr($book->abstract, 0, 30)}}...</td>
                                         <td><a href="{{$book->file_url}}" target="_blank">{{$book->file_url}}</a></td>
                                         <td>{{$book->category->research_type}},{{$book->category->strand}},{{$book->category->level}}</td>
                                         <td>      
                                         <form method="post" action="{{route('app.admin.books.destroy', $book)}}"> 
                                             <a href="{{ route('admin.books.show', ['book' =>$book->id])}}" class="btn btn-warning"><i class="fas fa-eye"></i></a>&nbsp;
+                                            
                                                 @csrf 
                                               @method('delete')
                                         <button type="submit" onclick="return confirm('This will delete the entry!\nAre you sure?')" class="btn btn-danger btn-sm"> <span class="fas fa-trash"></span></a>

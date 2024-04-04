@@ -43,6 +43,8 @@ Route::middleware(['active'])->group(function () {
         Route::get('/app/admin/users/{user}/reset', [AdminUserController::class, 'reset'])->name('admin.users.reset');
         Route::patch('/app/admin/users/{user}', [AdminUserController::class, 'resetOk'])->name('admin.users.resetOk');
         Route::get('/app/admin/books/create', [AdminBookController::class, 'create'])->name('admin.books.create');
+        Route::get('app/admin/books/{book}', [AdminBookController::class, 'modify'])->name('admin.books.modify');
+        Route::put('app/admin/books/{book}', [AdminBookController::class, 'update'])->name('admin.books.update');
         Route::post('app/admin/books', [AdminBookController::class, 'store'])->name('admin.books.store');
         Route::delete('/app/admin/books/{book}', [AdminBookController::class, 'destroy'])->name('app.admin.books.destroy');
         Route::get('/app/admin/category/create', [AdminCategoryController::class, 'create'])->name('admin.category.create');
@@ -50,6 +52,7 @@ Route::middleware(['active'])->group(function () {
         Route::get('app/admin/category/{category}', [AdminCategoryController::class, 'modify'])->name('admin.category.modify');
         Route::put('app/admin/category/{category}', [AdminCategoryController::class, 'update'])->name('admin.category.update');
         Route::delete('/app/admin/category/{category}', [AdminCategoryController::class, 'destroy'])->name('app.admin.category.destroy');
+        Route::get('/app/admin/authors', [AuthorController::class, 'index'])->name('admin.authors.index');
         Route::get('/app/admin/authors/create', [AdminAuthorController::class, 'create'])->name('admin.authors.create');
         Route::post('app/admin/authors', [AdminAuthorController::class, 'store'])->name('admin.authors.store');
         Route::get('app/admin/authors/{author}', [AdminAuthorController::class, 'modify'])->name('admin.authors.modify');
@@ -64,8 +67,5 @@ Route::middleware(['active'])->group(function () {
     Route::get('/app/admin/books', [BookController::class, 'index'])->name('admin.books.index');
     
     Route::get('/books/{book}', [AdminBookController::class, 'show'])->name('admin.books.show');
-
-    
-
-    Route::get('/app/admin/authors', [AuthorController::class, 'index'])->name('admin.authors.index');
+   
 });

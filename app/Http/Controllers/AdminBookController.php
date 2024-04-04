@@ -17,7 +17,7 @@ class AdminBookController extends Controller
     {
         $book = Book::orderBy('created_at', 'DESC')->get();
        
-        return view('admin.books.home', ['books' => $book]);
+        return view('admin.books.home', ['books' => $books]);
     }
      
     public function show(Book $book){
@@ -48,7 +48,7 @@ public function create()
 
     public function modify(Book $book)
     {
-        return view('admin.books.modify', ['books' => $book]);
+        return view('app.admin.books.modify', ['book' => $book]);
     }
 
     public function update(Request $request, Book $book)
@@ -63,7 +63,7 @@ public function create()
 
         $book->update($data);
 
-        return redirect(route('admin.books.modify', ['books' => $book]))->with('status', 'Blog has been successfully updated.');
+        return redirect(route('admin.books.index', ['book' => $book]))->with('status', 'Blog has been successfully updated.');
     }
 
     public function destroy(Book $book)

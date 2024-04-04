@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'pic/logo.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'app/admin',
+    'dashboard_url' => '/home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -305,15 +305,16 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Category',
-            'url'         => 'app/admin/category',
-            'icon'        => 'nav-icon fas fa-list',
-            'label_color' => 'success',
-        ],
-        [
             'text'        => 'Books',
             'url'         => 'app/admin/books',
             'icon'        => 'nav-icon fas fa-book',
+            'label_color' => 'success',
+        ],
+        ['header' => 'Admin'],
+        [
+            'text'        => 'Category',
+            'url'         => 'app/admin/category',
+            'icon'        => 'nav-icon fas fa-list',
             'label_color' => 'success',
         ],
         [
@@ -322,7 +323,7 @@ return [
             'icon'        => 'nav-icon fas fa-user',
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Account Settings'],
         [
             'text'        => 'User Management',
             'url'         => 'app/admin/users',
